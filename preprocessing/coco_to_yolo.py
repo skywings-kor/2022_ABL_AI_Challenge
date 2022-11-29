@@ -82,7 +82,8 @@ class ConvertCOCOToYOLO:
             # Get required data
             #image_id = f'{data[annotation_key][i][img_id]}'
             #category_id = f'{data[annotation_key][i][cat_id]}'
-            image_id = f'{data[images][i][file_name]}'
+            id_key=data[annotation_key][i][img_id]
+            image_id = f'{data[images][id_key][file_name]}'
             category_id = f'{data[annotation_key][i][cat_id]}'
             bbox = data[annotation_key][i]['bbox']
 
@@ -121,3 +122,4 @@ class ConvertCOCOToYOLO:
 # To run in as a class
 if __name__ == "__main__":
     ConvertCOCOToYOLO(img_folder='C:\\3-2\\AI챌린지_볼트이미지',json_path='C:\\3-2\\AI챌린지_볼트이미지\\instance_coco.json').convert()
+
